@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+
+# Mac files
+.DS_Store
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info

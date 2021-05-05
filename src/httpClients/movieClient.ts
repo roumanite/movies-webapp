@@ -6,7 +6,7 @@ class MovieClient {
     return 'https://sometimes-maybe-flaky-api.gdshive.io';
   }
 
-  async getMovies(): Promise<void> {
+  async getMovies(): Promise<Movie[]> {
     const request: AxiosRequestConfig = {
       method: 'GET',
       url: this.getMoviesUrl(),
@@ -14,9 +14,10 @@ class MovieClient {
 
     try {
       const response: AxiosResponse<Movie[]> = await axios(request);
-      console.log(response);
+      return response.data;
     } catch(error) {
       console.log(error);
+      throw error;
     }
   }
 }
