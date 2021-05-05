@@ -1,8 +1,12 @@
 import * as React from 'react';
+import { MainContainer } from 'components';
 
 const NotFound = (): JSX.Element => (
-  <div>
-  </div>
+  <MainContainer>
+    <div style={{ padding: '3rem' }}>
+      <h3>Page not found</h3>
+    </div>
+  </MainContainer>
 );
 
 export default NotFound;

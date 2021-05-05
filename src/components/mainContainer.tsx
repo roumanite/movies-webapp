@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
+import { Link } from 'react-router-dom';
 
 const { Header, Content } = Layout;
 
 interface MainContainerProps{
-  menu: React.ReactNode;
+  menu?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -17,9 +18,11 @@ const MainContainer = (props: MainContainerProps): JSX.Element => (
         top: '0',
       }}
     >
-      <h1>
-        Movies
-      </h1>
+      <Link to="/movies">
+        <h1>
+          Movies
+        </h1>
+      </Link>
     </Header>
     {props.menu}
     <Content

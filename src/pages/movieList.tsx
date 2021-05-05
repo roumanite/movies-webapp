@@ -114,7 +114,7 @@ class MovieList extends React.Component<{}, MoviesState> {
           {movies && movies.map((movie, i) => (
               <MovieItem key={i} movie={movie} />
           ))}
-          {movies.length === 0 && !isLoading && <h2>{'No movies found'}</h2>}
+          {movies.length === 0 && !isLoading && !error && <h2>{'No movies found'}</h2>}
           {isLoading && <h2>{'Loading ...'}</h2>}
         </div>
       </MainContainer>
