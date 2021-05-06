@@ -30,7 +30,7 @@ class MovieDetail extends React.Component<RouteComponentProps<{ name: string }>,
     try {
       const movies = await this.client.getMovies();
       this.setState({
-        movie: movies.find(movie => movie.name === name),
+        movie: movies.find(movie => movie.name.toLowerCase() === name.toLowerCase()),
         isLoading: false,
       });
     } catch(e) {
