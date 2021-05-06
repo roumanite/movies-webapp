@@ -11,7 +11,7 @@ interface Props {
   onChange: (value: string) => void;
   options: optionType[];
   value: string;
-  icon: any;
+  icon?: React.ReactNode;
 }
 
 const FilterButton = (props: Props): JSX.Element => (
@@ -20,6 +20,7 @@ const FilterButton = (props: Props): JSX.Element => (
     value={props.value}
     style={{ width: '10rem', margin: '0.5rem' }}
     onChange={props.onChange}
+    suffixIcon={props.icon}
   >
     {props.options.map(option => (
       <Option key={option.value} value={option.value}>{option.text}</Option>

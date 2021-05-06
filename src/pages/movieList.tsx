@@ -112,7 +112,7 @@ class MovieList extends React.Component<{}, MoviesState> {
             </div>
           )}
           {movies && movies.map((movie, i) => (
-              <MovieItem key={i} movie={movie} />
+            <MovieItem key={i} movie={movie} linkTo={`movies/${movie.name}`} />
           ))}
           {movies.length === 0 && !isLoading && !error && <h2>{'No movies found'}</h2>}
           {isLoading && <h2>{'Loading ...'}</h2>}
